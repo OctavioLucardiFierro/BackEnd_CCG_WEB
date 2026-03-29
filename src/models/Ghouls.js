@@ -23,10 +23,10 @@ export const getAllGhouls = async () => {
 
 export const createGhoul = async (data) =>{
     try {
-    const docRef = await addDoc(ghoulsCollection, data);
-    console.log("Ghoul registrado con exito")
-    return { id: docRef.id, ...data };
-  } catch (error) {
+      const docRef = await addDoc(ghoulsCollection, data);
+      console.log("Ghoul registrado con exito")
+      return { id: docRef.id, ...data };
+    } catch (error) {
     console.error(error);
   }
 };

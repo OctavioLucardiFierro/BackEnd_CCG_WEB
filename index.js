@@ -1,6 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import ghoulsRouter from "./src/routes/ghouls.router.js";
+import investRouter from "./src/routes/invest.router.js";
 
 import cors from "cors";
 
@@ -9,6 +10,7 @@ app.use(express.json());
 
 app.use(cors());
 app.use('/',ghoulsRouter);
+app.use('/',investRouter);
 
 app.use((req,res,next) =>{ //Manejo del error 404
     res.status(404).json({error:"not Found"})
